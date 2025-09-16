@@ -1,6 +1,8 @@
 # MoonStuff
+https://steamcommunity.com/sharedfiles/filedetails/?id=3569149268
 
 Collection of Devtool objects i've made, including Sandfall, ColouredOESphere and more. (I may also add Items and Creatures later on)
+Some objects may require MSC to be able to use.
 
 ## Region properties
 
