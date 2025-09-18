@@ -179,7 +179,7 @@ namespace MoonStuff.DevtoolObjects
 
                 base.Refresh();
                 Local.Text = "Type: " + ((pObj.data as LightSourceFlickerData).Local ? "Local" : "Room");
-                Synced.Text = "Synced: " + ((pObj.data as LightSourceFlickerData).Local ? "True" : "False");
+                Synced.Text = "Synced: " + ((pObj.data as LightSourceFlickerData).Synced ? "True" : "False");
 
                 if ((pObj.data as LightSourceFlickerData).Type == 0)
                 {

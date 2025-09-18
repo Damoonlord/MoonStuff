@@ -1,12 +1,24 @@
-﻿using UnityEngine;
+﻿using DevInterface;
+using UnityEngine;
+using static MoonStuff.DevtoolObjects.ColoredOESphereType;
 using static Pom.Pom;
 
 namespace MoonStuff.DevtoolObjects
 {
     public class WarmSpotType : ManagedObjectType
     {
-        public WarmSpotType() : base("WarmSpot", Register.GeneralTab, null, typeof(WarmSpotData), ModManager.MSC ? typeof(ManagedRepresentation) : null) { }
+        public WarmSpotType() : base("WarmSpot", Register.GeneralTab, null, typeof(WarmSpotData), typeof(WarmSpotRepresentation)) { }
         public override UpdatableAndDeletable MakeObject(PlacedObject placedObject, Room room) => ModManager.MSC ? new WarmSpot(placedObject, room) : null;
+
+        public override PlacedObjectRepresentation MakeRepresentation(PlacedObject pObj, ObjectsPage objPage)
+        {
+            if (!ModManager.MSC)
+            {
+                return null;
+            }
+
+            return base.MakeRepresentation(pObj, objPage);
+        }
 
         public class WarmSpotData : ManagedData
         {
@@ -22,6 +34,11 @@ namespace MoonStuff.DevtoolObjects
             public float Hue = -1f;
 
             public WarmSpotData(PlacedObject owner) : base(owner, customFields) { }
+        }
+
+        public class WarmSpotRepresentation : ManagedRepresentation
+        {
+            public WarmSpotRepresentation(PlacedObject.Type placedType, DevInterface.ObjectsPage objPage, PlacedObject pObj) : base(placedType, objPage, pObj) { }
         }
     }
 }

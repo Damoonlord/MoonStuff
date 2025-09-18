@@ -55,7 +55,7 @@ namespace MoonStuff.DevtoolObjects
 
             if (Main.IOModule)
             {
-                RegisterManagedObject(new Door());
+                RegisterManagedObject(new DoorType());
             }
         }
     }

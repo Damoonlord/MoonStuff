@@ -51,8 +51,6 @@ namespace MoonStuff
                 self.Shaders.Add("ColoredOESphereLight", FShader.CreateShader("ColoredOESphereLight", assetBundle.LoadAsset<Shader>("assets/shaders/ColoredOESphereLight.shader")));
                 self.Shaders.Add("SandFall", FShader.CreateShader("SandFall", assetBundle.LoadAsset<Shader>("assets/shaders/SandFall.shader")));
                 Logger.LogInfo("Shaders loaded!");
-
-                //IL.ModManager.RefreshModsLists += MSCRestart;
             }
             catch (Exception e)
             {

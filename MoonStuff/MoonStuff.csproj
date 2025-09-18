@@ -89,6 +89,7 @@
     <Compile Include="DevtoolObjects\ColoredOESphere.cs" />
     <Compile Include="DevtoolObjects\Crystal.cs" />
     <Compile Include="DevtoolObjects\IO\Door.cs" />
+    <Compile Include="DevtoolObjects\IO\DoorType.cs" />
     <Compile Include="DevtoolObjects\IO\IOManager.cs" />
     <Compile Include="DevtoolObjects\IO\ITakeInputs.cs" />
     <Compile Include="DevtoolObjects\LightSourceFlicker.cs" />

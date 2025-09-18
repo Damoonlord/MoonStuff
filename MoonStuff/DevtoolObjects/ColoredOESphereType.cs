@@ -1,5 +1,6 @@
 ﻿using DevInterface;
 using RWCustom;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -10,8 +11,18 @@ namespace MoonStuff.DevtoolObjects
 {
     public class ColoredOESphereType : ManagedObjectType
     {
-        public ColoredOESphereType() : base("Colored OE Sphere", Register.GeneralTab, null, typeof(ColoredOESphereData), ModManager.MSC ? typeof(ColoredOESphereRepresentation) : null) { }
+        public ColoredOESphereType() : base("Colored OE Sphere", Register.GeneralTab, null, typeof(ColoredOESphereData), typeof(ColoredOESphereRepresentation)) { }
         public override UpdatableAndDeletable MakeObject(PlacedObject placedObject, Room room) => ModManager.MSC ? new ColoredOESphere(placedObject, room) : null;
+
+        public override PlacedObjectRepresentation MakeRepresentation(PlacedObject pObj, ObjectsPage objPage)
+        {
+            if (!ModManager.MSC)
+            {
+                return null;
+            }
+
+            return base.MakeRepresentation(pObj, objPage);
+        }
 
         public class ColoredOESphereData : ManagedData
         {

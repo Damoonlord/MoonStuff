@@ -2,6 +2,7 @@
 using MoonStuff.DevtoolObjects;
 using RWCustom;
 using UnityEngine;
+using static Pom.Pom;
 
 namespace MoonStuff
 {
@@ -71,7 +72,7 @@ namespace MoonStuff
 
         public static void MSCCheck(On.DevInterface.AddObjectButton.orig_Clicked orig, AddObjectButton self)
         {
-            if (!ModManager.MSC && self.type == Register.PlacedObjects.ColoredOESphere || self.type == Register.PlacedObjects.WarmSpot)
+            if (!ModManager.MSC && (self.type == Register.PlacedObjects.ColoredOESphere || self.type == Register.PlacedObjects.WarmSpot))
             {
                 self.owner.room.AddObject(MSCWarning = new WarningLabel("You need MSC to use this object!", 100, (self.Page as ObjectsPage).objectsPanel));
                 return;
